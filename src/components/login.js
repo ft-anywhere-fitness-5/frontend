@@ -1,26 +1,47 @@
 import React from "react";
 
-function login({ login, error }) {
-  const [details, setDetails] = useState({ email: "", password: "" });
+export default function login(props) {
+    const {
+      values,
+      submit,
+      change,
+    } = props
 
   const submitHandler = (e) => {
     e.preventDefault();
+    submit
   };
+
+
+  const onChange = evt => {
+    const { name, value } = evt.target
+    change(name, value)
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div>
         <h2> Login</h2>
 
         <div>
-          <label>Email:</label>
-          <input type="email" name="email" id="email" />
+        <label>Username&nbsp;
+          <input
+            value={values.username}
+            onChange={onChange}
+            name='username'
+            type='text'
+          />
+        </label>
+        <label>Password
+          <input
+            value={values.password}
+            onChange={onChange}
+            name='password'
+            type='text'
+          />
+        </label>
         </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <input type="submit" value="Login"></input>
-      </div>
+</div>
     </form>
   );
 }
