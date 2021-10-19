@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Class(props) {
     const {classItem} = props
     // if details doesnt load right away
@@ -12,15 +13,14 @@ function Class(props) {
     
     return (
         <div className='card container'>
-            <h2>{classItem.class_name}</h2>
-            <p>Type:{classItem.class_type}</p>
-            <p>Start:{classItem.class_start_time}</p>
-            <p>Duration:{classItem.class_duration}</p>
-            <p>Difficulty:{classItem.intensity}</p>
-            <p>Where:{classItem.location}</p>
-            <p>People registered:{classItem.registered}</p>
-            <p>Max class size:{classItem.maxSize}</p>
-            {/*instructors can edit/update/delete class with auth */}
+            <h2>{classItem.class_name} </h2>
+            <p>Class: {classItem.class_type}</p>
+            <p>Start: {classItem.class_start_time}🕥</p>
+            <p>Duration: {classItem.class_duration} minutes</p>
+            <p>Difficulty: {classItem.intensity}</p>
+            <p>Where: {classItem.location}</p>
+            <p>People registered: {classItem.registered}</p>
+            <p>Max class size: {classItem.maxSize}</p>
         </div>
     )
 }
