@@ -4,9 +4,10 @@ import { getClasses } from "../actions";
 import Class from './class';
 
 const ClassList = (props) => {
+
     useEffect(()=>{
-        props.getClasses()
-    },[])
+        props.getClasses();
+    })
 
     return(
       <div>
