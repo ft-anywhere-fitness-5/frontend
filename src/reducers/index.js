@@ -4,7 +4,8 @@ const initialState = {
     isFetching: false,
     classes:[],
     instructor: false,
-    reserved:[]
+    reserved:[],
+    username:'guest'
 }
 
 export const reducer = (state = initialState, action)=>{

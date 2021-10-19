@@ -20,6 +20,7 @@ function Class(props) {
             <p>Where:{classItem.location}</p>
             <p>People registered:{classItem.registered}</p>
             <p>Max class size:{classItem.maxSize}</p>
+            {/*instructors can edit/update/delete class with auth */}
         </div>
     )
 }

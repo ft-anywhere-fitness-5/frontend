@@ -11,9 +11,12 @@ const ClassList = (props) => {
 
     return(
       <div>
-        {props.classes && props.classes.map(classItem => {
-          return <Class key={classItem.class_id} classItem={classItem}/>
-        })}
+        <h3>Classes</h3>
+        <div className='classlist'>
+          {props.classes && props.classes.map(classItem => {
+            return <Class key={classItem.class_id} classItem={classItem}/>
+          })}
+        </div>
       </div>
     )
 }

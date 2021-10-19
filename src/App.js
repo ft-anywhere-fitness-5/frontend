@@ -1,7 +1,10 @@
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
 import React from 'react';
+
 import ClassList from "./components/classList";
 import Login  from "./components/login";
+import Signup from "./components/signup";
+import AddClass from "./components/AddClass";
 
 function App() {
   return (
@@ -13,7 +16,7 @@ function App() {
         <nav>
           <ul>
             <Link to='/login'>login</Link>
-            <li>signup</li>
+            <Link to='/signup'>signup</Link>
             <Link to='/classList'>home</Link>
           </ul>
         </nav>
@@ -29,6 +32,12 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login/>
+          </Route>
+          <Route path='/signup'>
+            <Signup/>
+          </Route>
+          <Route path='/addclass'>
+            <AddClass/>
           </Route>
         </Switch>
     </div>
