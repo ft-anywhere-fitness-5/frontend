@@ -10,7 +10,6 @@ const initialState = {
 export const reducer = (state = initialState, action)=>{
     switch(action.type){
         case FETCH_START:
-            console.log('fetching')
             return{
                 ...state,
                 isFetching: true

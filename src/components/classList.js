@@ -8,15 +8,10 @@ const ClassList = (props) => {
         props.getClasses()
     },[])
 
-    useEffect(()=>{
-        console.log(props.classes)
-    },[props.classes])
-
-
     return(
       <div>
         {props.classes && props.classes.map(classItem => {
-          return <Class key={classItem.id} classItem={classItem}/>
+          return <Class key={classItem.class_id} classItem={classItem}/>
         })}
       </div>
     )
