@@ -32,11 +32,13 @@ const mapStateToProps= state => ({
 
 export default connect(mapStateToProps,{getClasses})(ClassList) 
 
+// Class styling
+
 const StyledClass = styled.div`
 border: 1px solid gold;
 background: black;
 width:35%;
-
+height: 75vh;
 
 h2 {
     display:flex;
@@ -57,8 +59,9 @@ p {
     width: 75%;
     height: 2.3rem;
 }
-div :hover {
-  transform: scale(1.03);
-}
 
+p:hover {
+  background: white;
+  transform: scale(1.04);
+}
 `
