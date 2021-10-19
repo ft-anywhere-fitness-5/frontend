@@ -7,7 +7,8 @@ const ClassList = (props) => {
 
     useEffect(()=>{
         props.getClasses();
-    })
+    },[]) //eslint-disable-line
+
 
     return(
       <div>

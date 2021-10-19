@@ -1,4 +1,6 @@
 import React,{useState} from "react";
+import { useHistory } from "react-router";
+import axios from "axios";
 
 export default function Login(props) {
   const initialState = {
@@ -6,21 +8,21 @@ export default function Login(props) {
     password:''
   }
   const [credentials, setCredentials]= useState(initialState)
-
+  const history = useHistory()
   const submitHandler = (e) => {
     e.preventDefault();
-    //when we have auth
-    // axios.post("", credentials)
-    //   .then(resp => {
-    //     localStorage.setItem("token", resp.data.token);
-    //     localStorage.setItem("role", resp.data.role);
-    //     localStorage.setItem("username", resp.data.username);
-        
-    //     this.props.history.push('/protected');
-    //   })
-    //   .catch(err=> {
-    //     console.log(err);
-    //   })
+    axios.post('https://ft-anywhere-fitness-5.herokuapp.com/api/auth/login'
+      , credentials)
+      .then(resp => {
+        localStorage.setItem("token", resp.data.token);
+        //localStorage.setItem("role", resp.data.role);
+        localStorage.setItem("username", resp.data.username);
+        console.log(resp.data)
+        history.push('/classlist');
+      })
+      .catch(err=> {
+        console.log(err);
+      })
   };
 
 
@@ -51,7 +53,7 @@ export default function Login(props) {
             value={credentials.password}
             onChange={onChange}
             name='password'
-            type='text'
+            type='password'
           />
         </label>
         <input type='submit'/>

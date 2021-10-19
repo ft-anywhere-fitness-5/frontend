@@ -15,9 +15,9 @@ function App() {
         <h1>Anywhere Fitness!</h1>
         <nav>
           <ul>
-            <Link to='/login'>login</Link>
-            <Link to='/signup'>signup</Link>
-            <Link to='/classList'>home</Link>
+            <li><Link to='/login'>login</Link></li>
+            <li><Link to='/signup'>signup</Link></li>
+            <li><Link to='/classList'>home</Link></li>
           </ul>
         </nav>
       </header>
