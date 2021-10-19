@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function login(props) {
-    const {
-      values,
-      submit,
-      change,
+  const {
+    values,
+    submit,
+    change,
     } = props
 
   const submitHandler = (e) => {

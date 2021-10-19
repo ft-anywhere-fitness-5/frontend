@@ -1,23 +1,25 @@
 import React from 'react';
 
 function Class(props) {
-
+    const {classItem} = props
     // if details doesnt load right away
-    if (!props) {
-        return <h3>Getting class list please wait...</h3>
-    }
+
+    //will put something like this in ClassList else it produces many
+    // if (!props) {
+    //     return <h3>Getting class list please wait...</h3>
+    // }
 
     
     return (
         <div className='card container'>
-            <h2>{props.className} {props.id}</h2>
-            <p>Type:{props.classType}</p>
-            <p>Start:{props.start}</p>
-            <p>Duration:{props.duration}</p>
-            <p>Difficulty{props.intensity}</p>
-            <p>Where:{props.location}</p>
-            <p>People registered:{props.registered}</p>
-            <p>Max class size:{props.maxSize}</p>
+            <h2>{classItem.class_name}</h2>
+            <p>Type:{classItem.class_type}</p>
+            <p>Start:{classItem.class_start_time}</p>
+            <p>Duration:{classItem.class_duration}</p>
+            <p>Difficulty:{classItem.intensity}</p>
+            <p>Where:{classItem.location}</p>
+            <p>People registered:{classItem.registered}</p>
+            <p>Max class size:{classItem.maxSize}</p>
         </div>
     )
 }
