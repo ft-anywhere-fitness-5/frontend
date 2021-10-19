@@ -38,3 +38,4 @@ Instructors can take attendance, request and process payments, create virtual â€
 
 # Stretch
 1. Implement payments using PayPal, Stripe or another 3rd party API.
+
