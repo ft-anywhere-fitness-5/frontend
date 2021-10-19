@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getClasses } from "../actions";
 import Class from './class';
+import styled from "styled-components";
 
 const ClassList = (props) => {
 
@@ -11,6 +12,7 @@ const ClassList = (props) => {
 
 
     return(
+      <StyledClass>
       <div>
         <h3>Classes</h3>
         <div className='classlist'>
@@ -19,6 +21,7 @@ const ClassList = (props) => {
           })}
         </div>
       </div>
+      </StyledClass>
     )
 }
 
@@ -27,3 +30,32 @@ const mapStateToProps= state => ({
 })
 
 export default connect(mapStateToProps,{getClasses})(ClassList) 
+
+const StyledClass = styled.div`
+border: 1px solid gold;
+background: black;
+width:35%;
+height: 75vh;
+h2 {
+    display:flex;
+    font-size: 200%;
+    color: gold;
+    justify-content:center;
+    margin-bottom: 4rem;
+}
+p {
+    display: felx;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: gold;
+    justify-content: center;
+    margin-left: 5rem;
+    width: 75%;
+    height: 2.3rem;
+}
+p:hover {
+  background: white;
+  transform: scale(1.04);
+}
+`
