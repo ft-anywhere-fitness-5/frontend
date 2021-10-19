@@ -1,6 +1,7 @@
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
 import React from 'react';
 import ClassList from "./components/classList";
+import Login  from "./components/login";
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
         <h1>Anywhere Fitness!</h1>
         <nav>
           <ul>
-            <li>login</li>
+            <Link to='/login'>login</Link>
             <li>signup</li>
-            <li>home</li>
+            <Link to='/classList'>home</Link>
           </ul>
         </nav>
       </header>
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/classList'> 
             <ClassList/>
+          </Route>
+          <Route path='/login'>
+            <Login/>
           </Route>
         </Switch>
     </div>
