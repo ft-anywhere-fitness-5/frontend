@@ -41,6 +41,7 @@ export default function login(props) {
           />
         </label>
         </div>
+        <button>Login</button>
 </div>
     </form>
   );
