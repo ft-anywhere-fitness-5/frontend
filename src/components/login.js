@@ -19,8 +19,7 @@ export default function Login(props) {
       )
       .then((resp) => {
         localStorage.setItem("token", resp.data.token);
-        //localStorage.setItem("role", resp.data.role);
-        localStorage.setItem("username", resp.data.username);
+        localStorage.setItem('role', resp.data.user.role);
         console.log(resp.data);
         history.push("/classlist");
       })

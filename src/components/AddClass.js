@@ -24,6 +24,7 @@ const AddClass = () => {
     }
     const handleSubmit=(evt)=>{
         evt.preventDefault();
+        setValues({...values, class_duration: (values.class_duration + ' min')})
         axiosWithAuth().post('https://ft-anywhere-fitness-5.herokuapp.com/api/classes/',values)
         .then(resp=>{
             console.log(resp.data)
