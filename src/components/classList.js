@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getClasses } from "../actions";
 import Class from './class';
 import styled from "styled-components";
+import Search from "./search";
 
 const ClassList = (props) => {
 
@@ -14,6 +15,7 @@ const ClassList = (props) => {
     return(
       <StyledClass>
         <h3>Classes</h3>
+        {props.classes && <Search/>}
         <div className='classlist'>
           {props.classes && props.classes.map(classItem => {
             return <Class key={classItem.class_id} classItem={classItem}/>
