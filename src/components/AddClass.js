@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-
+import { useHistory } from "react-router-dom";
 const AddClass = () => {
     const initialValues={
         class_duration: "0",
@@ -13,7 +13,7 @@ const AddClass = () => {
         class_registered_attendees: "0"
     }
     const [values, setValues] = useState(initialValues)
-
+    const history = useHistory()
     const onChange = evt => {
         const {name,value}= evt.target;
 
@@ -28,6 +28,7 @@ const AddClass = () => {
         axiosWithAuth().post('https://ft-anywhere-fitness-5.herokuapp.com/api/classes/',values)
         .then(resp=>{
             console.log(resp.data)
+            history.push('/homepage')
         })
         .catch(err=>{
             console.log(err)
