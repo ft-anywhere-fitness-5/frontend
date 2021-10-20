@@ -4,7 +4,7 @@ import { getClasses } from "../actions";
 import Class from './class';
 import styled from "styled-components";
 import Search from "./search";
-
+//make mobile ready
 const ClassList = (props) => {
 
     useEffect(()=>{
