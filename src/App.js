@@ -5,13 +5,14 @@ import ClassList from "./components/classList";
 import Login  from "./components/login";
 import Signup from "./components/signup";
 import AddClass from "./components/AddClass";
-import Search from "./components/search";
+import HomePage from "./components/homePage";
+import Onboarding from "./components/onBoarding";
 
 function App() {
   return (
     <Router>
     <div className="App">
-<Search/>
+
       <header className="App-header">
         <h1>Anywhere Fitness!</h1>
         <nav>
@@ -39,6 +40,12 @@ function App() {
           </Route>
           <Route path='/addclass'>
             <AddClass/>
+          </Route>
+          <Route path='/homepage'>
+            <HomePage/>
+          </Route>
+          <Route path='/onboarding'>
+            <Onboarding/>
           </Route>
         </Switch>
     </div>
