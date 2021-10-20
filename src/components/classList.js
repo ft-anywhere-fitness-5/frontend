@@ -35,7 +35,6 @@ const StyledClass = styled.div`
 border: 1px solid gold;
 background: black;
 width:35%;
-height: 75vh;
 h2 {
     display:flex;
     font-size: 200%;
