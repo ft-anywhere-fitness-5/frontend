@@ -18,11 +18,12 @@ export default function Home() {
         <StyledHome>
             <div className='user-section'>
               <div className='welcomeMessage'>
-                <h1>Welcome {}</h1>
+                <h1>Welcome </h1>
               </div>
                 <div id='mySidebar' class='sidepanel'>
                     <a href='/homePage' class='closebtn' onClick={closeNav}>&times; Close</a>
                     <a href='/classList'>Classes</a>
+                    <a href='/logout'>Logout</a>
                 </div>
 
                 <div id='main'>
@@ -36,14 +37,15 @@ export default function Home() {
 const StyledHome = styled.div`
 width: 99.92%;
 height: 150vh;
-border: 1px solid black;
 display: flex;
 position: absolute;
+background-color: #4f4f4f;
 }
 
 h1 {
   margin-left:50rem;
   position: absolute;
+  color: gold;
 }
 
 .sidepanel {
@@ -51,7 +53,7 @@ h1 {
   width: 0;
   position: fixed;
   z-index: 1;
-  background-color: #111;
+  background-color: #4f4f4f;
   overflow-x: hidden;
   padding-top: 6rem;
   transition: 0.5s; 
@@ -61,7 +63,7 @@ h1 {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: gold;
   display: block;
   transition: 0.3s;
 }
@@ -80,13 +82,14 @@ h1 {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: #4f4f4f;
+  color: gold;
   padding: 10px 15px;
   border: none;
 }
 
 .openbtn:hover {
   background-color: #444;
+  color: white;
 }
 `
