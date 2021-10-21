@@ -5,6 +5,7 @@ export const FETCH_SUCCESS= 'FETCH_SUCCESS'
 export const RES_START= 'RES_START'
 export const RES_SUCCESS= 'RES_SUCCESS'
 export const DELETE_CLASS='DELETE_CLASS'
+export const SEARCH_CLASSES='SEARCH_CLASSES'
 
 export const getClasses = () => {
     return ( dispatch => {
@@ -46,4 +47,9 @@ export const resSuccess = (classes)=> {
 
 export const deleteClass = (id)=>{
     return({type:DELETE_CLASS, payload: id})
+}
+
+export const searchClasses = (search,input) => {
+    getClasses();
+    return({type:SEARCH_CLASSES, payload:search, input})
 }

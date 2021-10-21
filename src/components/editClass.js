@@ -21,22 +21,24 @@ const EditForm = () => {
     useEffect(()=>{
         axiosWithAuth()
         .get(`https://ft-anywhere-fitness-5.herokuapp.com/api/classes/${id}`)
-        .then(resp=>{setValues(resp.data)})
+        .then(resp=>{
+            console.log('newdata')
+            console.log(resp.data)
+            setValues(resp.data)})
         .catch(err=>{console.log(err)});
     },[])//eslint-disable-line
-
 
     const onChange = evt => {
         const {name,value}= evt.target;
 
         setValues({
             ...values,
-            [name]: value
+            [name]: value.toString()
         })
     }
     const handleSubmit=(evt)=>{
         evt.preventDefault();
-        setValues({...values, class_duration: (values.class_duration + ' min')})
+        console.log(values)
         axiosWithAuth().put(`https://ft-anywhere-fitness-5.herokuapp.com/api/classes/${id}`,values)
         .then(resp=>{
                 console.log(resp.data)
@@ -67,11 +69,11 @@ const EditForm = () => {
             </label>
         <br/>
         <label>Duration
-            <input value={values.class_duration} onChange={onChange} name='class_duration' type='number'/>min
+            <input value={values.class_duration.toString()} onChange={onChange} name='class_duration' type='number'/>min
         </label>
         <br/>
         <label>Class Size
-            <input value={values.class_max_size} onChange={onChange} name='class_max_size' type='number'/>
+            <input value={values.class_max_size.toString()} onChange={onChange} name='class_max_size' type='number'/>
         </label>
         <br/>
         <label>Location

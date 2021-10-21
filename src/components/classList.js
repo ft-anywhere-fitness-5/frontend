@@ -9,6 +9,7 @@ const ClassList = (props) => {
 
     useEffect(()=>{
         props.getClasses();
+        console.log('oh no')
     },[]) //eslint-disable-line
 
 
@@ -25,9 +26,8 @@ const ClassList = (props) => {
     )
 }
 
-const mapStateToProps= state => ({
+const mapStateToProps = state => ({
     classes: state.classes
-
 })
 
 export default connect(mapStateToProps,{getClasses, deleteClass})(ClassList) 
