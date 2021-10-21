@@ -19,7 +19,7 @@ const AddClass = () => {
 
         setValues({
             ...values,
-            [name]: value
+            [name]: value.toString()
         })
     }
     const handleSubmit=(evt)=>{
