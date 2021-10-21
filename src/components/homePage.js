@@ -17,9 +17,11 @@ export default function Home() {
     return (
         <StyledHome>
             <div className='user-section'>
-                
+              <div className='welcomeMessage'>
+                <h1>Welcome {}</h1>
+              </div>
                 <div id='mySidebar' class='sidepanel'>
-                    <a href='/home' class='closebtn' onClick={closeNav}>&times; Close</a>
+                    <a href='/homePage' class='closebtn' onClick={closeNav}>&times; Close</a>
                     <a href='/classList'>Classes</a>
                 </div>
 
@@ -37,6 +39,11 @@ height: 150vh;
 border: 1px solid black;
 display: flex;
 position: absolute;
+}
+
+h1 {
+  margin-left:50rem;
+  position: absolute;
 }
 
 .sidepanel {
