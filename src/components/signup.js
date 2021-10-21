@@ -22,19 +22,19 @@ const Signup = () => {
           .then((resp) => {
             console.log(resp.data);
             history.push("/homepage");
-            // axios.post(
-            //     "https://ft-anywhere-fitness-5.herokuapp.com/api/auth/login",
-            //     credentials
-            //     )
-            //     .then((resp) => {
-            //     localStorage.setItem("token", resp.data.token);
-            //     localStorage.setItem('role', resp.data.user.role);
-            //     console.log(resp.data);
-            //     history.push("/classlist");
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     });
+            axios.post(
+                "https://ft-anywhere-fitness-5.herokuapp.com/api/auth/login",
+                credentials
+                )
+                .then((resp) => {
+                localStorage.setItem("token", resp.data.token);
+                localStorage.setItem('role', resp.data.user.role);
+                console.log(resp.data);
+                history.push("/classlist");
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
           })
           .catch((err) => {
             console.log(err);

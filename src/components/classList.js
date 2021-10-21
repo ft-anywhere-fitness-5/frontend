@@ -26,7 +26,8 @@ const ClassList = (props) => {
 }
 
 const mapStateToProps= state => ({
-    classes: state.classes
+    classes: state.classes,
+    instructor: state.instructor
 })
 
 export default connect(mapStateToProps,{getClasses})(ClassList) 
@@ -36,9 +37,17 @@ const StyledClass = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .classlist{
-    background: black;
-    width:35%;
+    /*background: black;*/
+    width:50%;
+
+  }
+  @media(max-width:600px){
+    .classlist{
+      width:100%;
+  
+    }
   }
   h2 {
     display:flex;
@@ -49,7 +58,7 @@ const StyledClass = styled.div`
   }
   p {
     display: flex;
-    color: black;
+    color: #4f4f4f;
     font-size: 1.5rem;
     font-weight: bold;
     background: gold;
@@ -62,4 +71,6 @@ const StyledClass = styled.div`
     background: white;
     transform: scale(1.04);
   }
+
+
 `

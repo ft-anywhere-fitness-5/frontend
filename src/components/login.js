@@ -20,7 +20,7 @@ export default function Login(props) {
       .then((resp) => {
         localStorage.setItem("token", resp.data.token);
         localStorage.setItem('role', resp.data.user.role);
-        console.log(resp.data);
+        console.log(resp.data.user);
         history.push("/classlist");
       })
       .catch((err) => {

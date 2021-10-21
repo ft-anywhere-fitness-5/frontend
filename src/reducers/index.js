@@ -3,7 +3,6 @@ import { FETCH_SUCCESS } from "../actions"
 const initialState = {
     isFetching: false,
     classes:[],
-    instructor: false,
     reserved:[],
     username:'guest'
 }

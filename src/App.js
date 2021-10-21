@@ -1,13 +1,16 @@
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
 import React from 'react';
 import { ImageData } from "./components/onBoardImages";
+import styled from "styled-components";
 
 import ClassList from "./components/classList";
 import Login  from "./components/login";
+import Logout from "./components/logout";
 import Signup from "./components/signup";
 import AddClass from "./components/AddClass";
 import HomePage from "./components/homePage";
 import Onboarding from "./components/onBoarding";
+
 
 function App() {
   return (
@@ -16,13 +19,16 @@ function App() {
 
       <header className="App-header">
         <h1>Anywhere Fitness!</h1>
-        <nav>
+        <NavStyle>
           <ul>
             <li><Link to='/login'>login</Link></li>
             <li><Link to='/signup'>signup</Link></li>
-            <li><Link to='/classList'>home</Link></li>
+            {localStorage.getItem('token') !=null ?
+            <li><Link to='/homepage'>home</Link></li>:
+            <li><Link to='/classList'>home</Link></li>}
+            <li><Link to='/logout'>logout</Link></li>
           </ul>
-        </nav>
+        </NavStyle>
       </header>
 
         <Switch>
@@ -35,6 +41,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login/>
+          </Route>
+          <Route path='/logout'>
+            <Logout/>
           </Route>
           <Route path='/signup'>
             <Signup/>
@@ -55,3 +64,14 @@ function App() {
 }
 
 export default App;
+
+const NavStyle = styled.nav`
+  display:flex;
+  flex-direction: row-reverse;
+  ul{
+    li{
+      margin-right:5px;
+      display:inline-block;
+    }
+  }
+`
