@@ -1,5 +1,6 @@
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
 import React from 'react';
+import { ImageData } from "./components/onBoardImages";
 
 import ClassList from "./components/classList";
 import Login  from "./components/login";
@@ -45,7 +46,7 @@ function App() {
             <HomePage/>
           </Route>
           <Route path='/onboarding'>
-            <Onboarding/>
+            <Onboarding slides={ImageData}/>
           </Route>
         </Switch>
     </div>
