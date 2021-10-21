@@ -1,5 +1,4 @@
-import { FETCH_START, FETCH_SUCCESS,RES_SUCCESS, 
-    RES_START, DELETE_CLASS, SEARCH_CLASSES } from "../actions"
+import { FETCH_START, FETCH_SUCCESS,RES_SUCCESS, RES_START, DELETE_CLASS, SEARCH_CLASSES } from "../actions"
 const initialState = {
     isFetching: false,
     classes:[],
@@ -20,8 +19,7 @@ export const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 isFetching:false,
-                classes: action.payload,
-                filtered: state.classes
+                classes: action.payload
             }
         case RES_START:
             return{
@@ -46,8 +44,7 @@ export const reducer = (state = initialState, action)=>{
             console.log(state.classes[0][action.payload.search] + ' class-0, payload.search?')
             return{
                 ...state,
-
-                filtered: state.classes.filter(item => {
+                classes: state.classes.filter(item => {
                     const searchCat = item[action.payload.search]
                     const upperCat = searchCat.toUpperCase()
                     const searchTerm = action.payload.input
