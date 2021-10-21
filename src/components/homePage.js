@@ -19,13 +19,12 @@ export default function Home() {
             <div className='user-section'>
                 
                 <div id='mySidebar' class='sidepanel'>
-                    <a href='/home' class='closebtn' onclick={closeNav()}>&times; Close</a>
+                    <a href='/home' class='closebtn' onClick={closeNav}>&times; Close</a>
                     <a href='/classList'>Classes</a>
                 </div>
 
                 <div id='main'>
-                  <button class='openbtn' onclick={openNav()}>&#9776; Open</button>
-                  <a href='/classList'>Classes</a>
+                  <button class='openbtn' onClick={openNav}>&#9776; Open</button>
                 </div>
             </div>
         </StyledHome>
