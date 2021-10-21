@@ -12,7 +12,6 @@ const Search = (props) => {
         //classList.filter(class=>[radiovalue.name]:input == item.radioname)
         //classList.keys.filter(class=>[radiovalue.name]:input == item.radioname
         props.searchClasses(values)
-        console.log(props.classes)
     }
     const handleChanges=(e)=>{
         setValues({
