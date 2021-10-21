@@ -26,7 +26,7 @@ export default function Home() {
                 </div>
 
                 <div id='main'>
-                  <button class='openbtn' onClick={openNav}>&#9776; Open</button>
+                  <button className='openbtn' onClick={openNav}>&#9776; Open</button>
                 </div>
             </div>
         </StyledHome>
