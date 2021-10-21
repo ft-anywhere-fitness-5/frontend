@@ -20,8 +20,8 @@ export default function Home() {
               <div className='welcomeMessage'>
                 <h1>Welcome {}</h1>
               </div>
-                <div id='mySidebar' class='sidepanel'>
-                    <a href='/homePage' class='closebtn' onClick={closeNav}>&times; Close</a>
+                <div id='mySidebar' className='sidepanel'>
+                    <a href='/homePage' className='closebtn' onClick={closeNav}>&times; Close</a>
                     <a href='/classList'>Classes</a>
                 </div>
 
