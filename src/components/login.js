@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { getReserved } from "../actions";
 
-export default function Login(props) {
+const Login=(props)=>{
   const initialState = {
     username: "",
     password: "",
@@ -72,6 +74,12 @@ export default function Login(props) {
   );
 }
 
+const mapStateToProps = (state) => ({
+  reserved: state.reserved
+})
+
+export default connect(mapStateToProps,{getReserved})(Login);
+
 const Container = styled.div`
   align-items: center;
   justify-content: center;
@@ -80,7 +88,7 @@ const Container = styled.div`
   border-radius: 3%;
   width: 50%;
   margin: 0 auto;
-`;
+`
 
 const Input = styled.div`
   display: flex;
@@ -88,13 +96,13 @@ const Input = styled.div`
   align-items: center;
   padding: 3%;
   line-height: 5;
-`;
+`
 
 const InputSubmit = styled.div`
   width: 50%;
   margin-bottom: 30px;
   margin-left: 411px;
-`;
+`
 
 const Inputext = styled.div`
   width: 100%;
@@ -106,5 +114,5 @@ const Inputext = styled.div`
   border-width: 1;
   border-color: black;
   margin-bottom: 10px;
-`;
+`
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 import styled from 'styled-components';
+import { useHistory } from 'react-router';
 
 function Class(props) {
-    const {classItem} = props
+    const {classItem, deleteClass} = props
+    const itemID = classItem.class_id
 
+    const history = useHistory()
     const handleReserve=()=>{
         axiosWithAuth()
         .post('https://ft-anywhere-fitness-5.herokuapp.com/api/user',classItem)
@@ -12,6 +15,19 @@ function Class(props) {
             console.log(resp.data)
         })
     }
+    const handleEdit=()=>{
+        //take the itemID
+        //history.push to an edit form with The ID taking up State
+        console.log(itemID)
+        history.push(`./edit/${itemID}`)
+    }
+    const handleDelete = () => {
+        axiosWithAuth().delete(`https://ft-anywhere-fitness-5.herokuapp.com/api/classes/${itemID}`)
+          .then(res => {props.setItems(res.data)})
+          .catch(er=>{console.log(er)})
+          deleteClass(itemID)
+    
+      }
     
     return (
         <ClassStyle className='card container'>
@@ -28,8 +44,8 @@ function Class(props) {
             (localStorage.getItem('role') !== 'instructor' ? 
             <button onClick={handleReserve}>reserve</button> : 
             <div>
-            <button>edit</button>
-            <button>delete</button>
+            <button onClick={handleEdit}>edit</button>
+            <button onClick={handleDelete}>delete</button>
             </div>): <></>}
             
         </ClassStyle>

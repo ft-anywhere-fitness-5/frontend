@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getClasses } from "../actions";
+import { getClasses, deleteClass } from "../actions";
 import Class from './class';
 import styled from "styled-components";
 import Search from "./search";
@@ -18,7 +18,7 @@ const ClassList = (props) => {
         {props.classes && <Search/>}
         <div className='classlist'>
           {props.classes && props.classes.map(classItem => {
-            return <Class key={classItem.class_id} classItem={classItem}/>
+            return <Class key={classItem.class_id} deleteClass={deleteClass} classItem={classItem}/>
           })}
         </div>
       </StyledClass>
@@ -26,11 +26,11 @@ const ClassList = (props) => {
 }
 
 const mapStateToProps= state => ({
-    classes: state.classes,
-    instructor: state.instructor
+    classes: state.classes
+
 })
 
-export default connect(mapStateToProps,{getClasses})(ClassList) 
+export default connect(mapStateToProps,{getClasses, deleteClass})(ClassList) 
 
 const StyledClass = styled.div`
   border: 1px solid gold;
