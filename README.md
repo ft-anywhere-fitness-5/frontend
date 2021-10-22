@@ -5,37 +5,25 @@ While you could use several mobile apps to accomplish this, AnywhereFitness is t
 
 Instructors can take attendance, request and process payments, create virtual “punch passes” for each type of class offered, alert clients of cancellations or location changes and so much more. Clients can easily find out information on classes - location, class size, start time and duration, as well as reschedule or cancel an upcoming appointment or reservation right from the mobile app.
 
-# MVP
-* [ ] 1. User can create/register as a `client` and login with the registered credentials.
+## How To
+on landing, you will see the current class list
 
-* [ ] 2. User can create/register as an `instructor` by entering an additional Auth Code during signup, and can login with the registered credentials.
+above that is a search bar where you can search for classes by name. OR, you can click a category to search by.
 
-*[ ] 3. `client` and `instructor` are both presented with the appropriate on-boarding walkthrough on first sign-in, with an option to skip it.
+The Top right has links to different pages. 
+- `login` to sign in if you have already signed up
+- `signup` to register as either a client or class instructor
+- `home` will bring you to your homepage if already logged in.
+- `logout` will of course log you out if logged in at the time.
 
-* [ ] 4. Authenticated `Instructor` can create update and delete a `class`. At a minimum, each `class` must have the following properties:
 
-- `Name`
-- `Type`
-- `Start time`
-- `Duration`
-- `Intensity level`
-- `Location`
-- `Current number of registered attendees`
-- `Max class size`
+## Cient
 
-* [ ] 5. Authenticated `client` can search for available classes. At a minimum, they must be able to search by the following criteria:
+if signed in as a client, the homepage shows a list of your current reserved classes.
+you will also notice a tab to the right marked, 'open'
+this opens another navigation tool that will redirect back to all the classes.
+classes will now show a reserve button which wiil add that class to you reserve list.
 
-- `class time`
-- `class date`
-- `class duration`
-- `class type`
-- `intensity level`
-- `class location`
+## Instructor
 
-6. Authenticated `instructor` can create virtual punch pass categories for each type of group fitness class they offer (yoga, insanity, RIPPED, pilates, etc.)
-
-7. Authenticated `user` can reserve a spot in a `class` with available seats open, and can reschedule or cancel their current `reservation` from the mobile app.
-
-# Stretch
-1. Implement payments using PayPal, Stripe or another 3rd party API.
-
+Here, the open tab inlcudes an add-class link. From there the instructor can add new classes. Classes also show an edit and delete button.
