@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { deleteClass, getReserved } from '../actions';
+import Class from './class';
 
+const Home=(props)=>{
 
-export default function Home() {
+    useEffect(()=>{
+      props.getReserved();
+    },[])//eslint-disable-line
 
     function openNav() {
         document.getElementById('mySidebar').style.width = '250px';
@@ -13,25 +19,36 @@ export default function Home() {
         document.getElementById('mySidebar').style.width = '0';
         document.getElementById('main').style.marginLeft = '0px';
       }
-
+      console.log(props.reserved)
     return (
         <StyledHome>
             <div className='user-section'>
               <div className='welcomeMessage'>
                 <h1>Welcome {}</h1>
+        <div className='classlist'>
+          {props.reserved && props.reserved.map(item => {
+            return <Class key={item.class_id} deleteClass={deleteClass} classItem={item}/>
+          })}
+        </div>
               </div>
-                <div id='mySidebar' class='sidepanel'>
-                    <a href='/homePage' class='closebtn' onClick={closeNav}>&times; Close</a>
+                <div id='mySidebar' className='sidepanel'>
+                    <a href='/homePage' className='closebtn' onClick={closeNav}>&times; Close</a>
                     <a href='/classList'>Classes</a>
                 </div>
 
                 <div id='main'>
-                  <button class='openbtn' onClick={openNav}>&#9776; Open</button>
+                  <button className='openbtn' onClick={openNav}>&#9776; Open</button>
                 </div>
             </div>
         </StyledHome>
     )
 }
+
+const mapStateToProps= (state) => ({
+  username: state.username,
+  reserved: state.reserved
+})
+export default connect(mapStateToProps,{deleteClass, getReserved})(Home)
 
 const StyledHome = styled.div`
 width: 99.92%;

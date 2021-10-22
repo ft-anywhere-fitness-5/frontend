@@ -19,7 +19,8 @@ export const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 isFetching:false,
-                classes: action.payload
+                classes: action.payload,
+                filtered: action.payload
             }
         case RES_START:
             return{
@@ -40,11 +41,10 @@ export const reducer = (state = initialState, action)=>{
             }
         case SEARCH_CLASSES:
             //console.log(state.classes[0].class_id)
-            console.log(action.payload.search + '.search')
-            console.log(state.classes[0][action.payload.search] + ' class-0, payload.search?')
+            console.log(state.classes)
             return{
                 ...state,
-                classes: state.classes.filter(item => {
+                filtered: state.classes.filter(item => {
                     const searchCat = item[action.payload.search]
                     const upperCat = searchCat.toUpperCase()
                     const searchTerm = action.payload.input

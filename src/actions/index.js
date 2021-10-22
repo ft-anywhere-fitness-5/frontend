@@ -26,13 +26,16 @@ export const fetchSuccess = (classes)=> {
     return ({type:FETCH_SUCCESS, payload:classes});
 }
 
-export const getReserved=(id)=>{
+export const getReserved=()=>{
     return ( dispatch => {
         dispatch({type: RES_START})
 
-        axiosWithAuth.get(`https://ft-anywhere-fitness-5.herokuapp.com/api/user/${id}`)
-            .then(res=>{
-                dispatch(resSuccess(res.data))
+        axiosWithAuth().get(`https://ft-anywhere-fitness-5.herokuapp.com/api/user`)
+            .then(resp=>{
+                console.log(resp.data)
+                console.log('array here^^')
+                dispatch(resSuccess(resp.data))
+
             })
             .catch(er=>{
                 console.log('res error')
