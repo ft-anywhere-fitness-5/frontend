@@ -23,9 +23,9 @@ function Class(props) {
     }
     const handleDelete = () => {
         axiosWithAuth().delete(`https://ft-anywhere-fitness-5.herokuapp.com/api/classes/${itemID}`)
-          .then(res => {props.setItems(res.data)})
+          .then(res => {deleteClass(itemID)})
           .catch(er=>{console.log(er)})
-          deleteClass(itemID)
+          //deleteClass(itemID)
     
       }
     

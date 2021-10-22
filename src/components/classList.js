@@ -9,25 +9,25 @@ const ClassList = (props) => {
 
     useEffect(()=>{
         props.getClasses();
+        console.log('oh no')
     },[]) //eslint-disable-line
-
 
     return(
       <StyledClass>
         <h3>Classes</h3>
         {props.classes && <Search/>}
         <div className='classlist'>
-          {props.classes && props.classes.map(classItem => {
-            return <Class key={classItem.class_id} deleteClass={deleteClass} classItem={classItem}/>
+          {props.filtered && props.filtered.map(item => {
+            return <Class key={item.class_id} deleteClass={deleteClass} classItem={item}/>
           })}
         </div>
       </StyledClass>
     )
 }
 
-const mapStateToProps= state => ({
-    classes: state.classes
-
+const mapStateToProps = state => ({
+    classes: state.classes,
+    filtered: state.filtered
 })
 
 export default connect(mapStateToProps,{getClasses, deleteClass})(ClassList) 

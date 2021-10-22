@@ -8,7 +8,7 @@ import Login  from "./components/login";
 import Logout from "./components/logout";
 import Signup from "./components/signup";
 import AddClass from "./components/AddClass";
-import HomePage from "./components/homePage";
+import Home from "./components/homePage";
 import Onboarding from "./components/onBoarding";
 import EditForm from "./components/editClass";
 
@@ -57,7 +57,7 @@ function App() {
             <EditForm/>
           </Route>
           <Route path='/homepage'>
-            <HomePage/>
+            <Home/>
           </Route>
           <Route path='/onboarding'>
             <Onboarding slides={ImageData}/>
