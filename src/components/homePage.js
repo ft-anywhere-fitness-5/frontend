@@ -36,7 +36,9 @@ const Home=(props)=>{
               <a href='/homePage' className='closebtn' onClick={closeNav}>&times; Close</a>
               <a href='/classList'>Classes</a>
               <a href='/logout'>Logout</a>
+              {localStorage.getItem('role') != 'instructor' ? <></> : <a href='/addclass'>Add Class</a>}
             </div>
+           
 
             <div className='classlist'>
               {props.reserved && props.reserved.map(item => {

@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import { ImageData } from "./components/onBoardImages";
 import styled from "styled-components";
 
+import PrivateRoute from "./components/PrivateRoute";
+
 import ClassList from "./components/classList";
 import Login  from "./components/login";
 import Logout from "./components/logout";
@@ -44,21 +46,14 @@ function App() {
           <Route path='/login'>
             <Login/>
           </Route>
-          <Route path='/logout'>
-            <Logout/>
-          </Route>
+          <PrivateRoute path='/logout' component={Logout}/>
           <Route path='/signup'>
             <Signup/>
           </Route>
-          <Route path='/addclass'>
-            <AddClass/>
-          </Route>
-          <Route path='/edit/:id'>
-            <EditForm/>
-          </Route>
-          <Route path='/homepage'>
-            <Home/>
-          </Route>
+          
+          <PrivateRoute path='/addclass' component={AddClass}/>
+          <PrivateRoute path='/edit/:id' component={EditForm}/>
+          <PrivateRoute path='/homepage' component={Home}/>
           <Route path='/onboarding'>
             <Onboarding slides={ImageData}/>
           </Route>
