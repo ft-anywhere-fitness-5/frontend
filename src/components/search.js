@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { searchClasses } from "../actions";
 
 const Search = (props) => {
-    const initialvalues = {search:'',input:''}
+    const initialvalues = {search:'class_name',input:''}
     const [values,setValues]=useState(initialvalues)
     const handleSubmit=(e)=> {
         e.preventDefault();
